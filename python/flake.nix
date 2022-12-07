@@ -15,7 +15,7 @@
       in
       {
         packages.default = python.pkgs.buildPythonApplication {
-          name = "hello-nix-python";
+          name = "zero-to-nix-python";
 
           buildInputs = with python.pkgs; [ pip ];
 

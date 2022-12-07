@@ -14,7 +14,7 @@
       in
       {
         packages.default = pkgs.rustPlatform.buildRustPackage {
-          name = "hello-nix-rust";
+          name = "zero-to-nix-rust";
           src = ./.;
           cargoLock = {
             lockFile = ./Cargo.lock;

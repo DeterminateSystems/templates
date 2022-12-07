@@ -16,8 +16,8 @@
         pkgs = import nixpkgs { inherit system; };
       in
       {
-        packages.default = pkgs.buildGo119Module {
-          name = "hello-nix-go";
+        packages.default = pkgs.buildGoModule {
+          name = "zero-to-nix-go";
           src = gitignore.lib.gitignoreSource ./.;
           vendorSha256 = "sha256-fwJTg/HqDAI12mF1u/BlnG52yaAlaIMzsILDDZuETrI=";
         };
