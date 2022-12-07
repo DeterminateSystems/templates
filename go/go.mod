@@ -1,4 +1,4 @@
-module github.com/DeterminateSystems/zero-to-nix/nix/templates/go
+module github.com/DeterminateSystems/go
 
 go 1.19
 

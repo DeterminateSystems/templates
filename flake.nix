@@ -2,22 +2,22 @@
   outputs = { self, nixpkgs, flake-utils }: {
     templates = {
       go = {
-        path = ./templates/go;
+        path = ./go;
         description = "Go starter template for Zero to Nix";
       };
 
       javascript = {
-        path = ./templates/javascript;
+        path = ./javascript;
         description = "JavaScript starter template for Zero to Nix";
       };
 
       python = {
-        path = ./templates/python;
+        path = ./python;
         description = "Python starter template for Zero to Nix";
       };
 
       rust = {
-        path = ./templates/rust;
+        path = ./rust;
         description = "Rust starter template for Zero to Nix";
       };
     };
