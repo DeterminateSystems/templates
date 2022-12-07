@@ -1,5 +1,5 @@
 {
-  description = "Go starter flake for Zero to Nix";
+  description = "Go example flake for Zero to Nix";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs";
@@ -14,8 +14,12 @@
         python = pkgs.python39;
       in
       {
-        devShells.default = pkgs.mkShell {
-          buildInputs = [ python ];
+        packages.default = python.pkgs.buildPythonApplication {
+          name = "hello-nix-python";
+
+          buildInputs = with python.pkgs; [ pip ];
+
+          src = ./.;
         };
       });
 }
