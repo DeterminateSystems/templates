@@ -1,5 +1,5 @@
 {
-  outputs = { self }: {
+  outputs = { self, nixpkgs, flake-utils }: {
     templates = {
       go = {
         path = ./templates/go;
@@ -21,5 +21,14 @@
         description = "Rust starter template for Zero to Nix";
       };
     };
-  };
+  } // flake-utils.lib.eachDefaultSystem (system:
+    let
+      pkgs = import nixpkgs { inherit system; };
+      exampleShells = import ./shell/example.nix { inherit pkgs; };
+    in
+    {
+      devShells = {
+        inherit (exampleShells) example javascript python go rust multi;
+      };
+    });
 }
