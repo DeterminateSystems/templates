@@ -3,17 +3,21 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs";
-    flake-utils.url = "github:numtide/flake-utils";
     rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
-  outputs = { self, nixpkgs, flake-utils, rust-overlay }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
+  outputs = { self, nixpkgs, rust-overlay }:
+    let
+      nameValuePair = name: value: { inherit name value; };
+      genAttrs = names: f: builtins.listToAttrs (map (n: nameValuePair n (f n)) names);
+      allSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+      forAllSystems = f: genAttrs allSystems (system: f {
         pkgs = import nixpkgs { inherit system; };
-      in
-      {
-        packages.default = pkgs.rustPlatform.buildRustPackage {
+      });
+    in
+    {
+      packages = forAllSystems ({ pkgs }: {
+        default = pkgs.rustPlatform.buildRustPackage {
           name = "zero-to-nix-rust";
           src = ./.;
           cargoLock = {
@@ -21,4 +25,5 @@
           };
         };
       });
+    };
 }
