@@ -18,7 +18,7 @@
           exampleShells = import ./shell/example.nix { inherit pkgs; };
         in
         {
-          inherit (exampleShells) example javascript python go rust multi;
+          inherit (exampleShells) example cpp javascript python go rust multi;
         });
       templates = {
         go = {
