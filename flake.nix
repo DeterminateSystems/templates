@@ -21,6 +21,11 @@
           inherit (exampleShells) example javascript python go rust multi;
         });
       templates = {
+        cpp = {
+          path = ./cpp;
+          description = "C++ starter template for Zero to Nix";
+        };
+
         go = {
           path = ./go;
           description = "Go starter template for Zero to Nix";
