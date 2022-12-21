@@ -57,7 +57,7 @@
         };
 
         rust-pkg = {
-          path = ./rust-pkg;
+          path = ./templates/pkg/rust;
           description = "Rust package starter template for Zero to Nix";
         };
       };
