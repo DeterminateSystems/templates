@@ -21,24 +21,44 @@
           inherit (exampleShells) example cpp javascript python go rust multi;
         });
       templates = {
-        go = {
-          path = ./go;
-          description = "Go starter template for Zero to Nix";
+        go-dev = {
+          path = ./templates/dev/go;
+          description = "Go dev environment template for Zero to Nix";
         };
 
-        javascript = {
-          path = ./javascript;
-          description = "JavaScript starter template for Zero to Nix";
+        javascript-dev = {
+          path = ./templates/dev/javascript;
+          description = "JavaScript dev environment template for Zero to Nix";
         };
 
-        python = {
-          path = ./python;
-          description = "Python starter template for Zero to Nix";
+        python-dev = {
+          path = ./templates/dev/python;
+          description = "Python dev environment template for Zero to Nix";
         };
 
-        rust = {
-          path = ./rust;
-          description = "Rust starter template for Zero to Nix";
+        rust-dev = {
+          path = ./templates/dev/rust;
+          description = "Rust dev environment template for Zero to Nix";
+        };
+
+        go-pkg = {
+          path = ./templates/pkg/go;
+          description = "Go package starter template for Zero to Nix";
+        };
+
+        javascript-pkg = {
+          path = ./templates/pkg/javascript;
+          description = "JavaScript package starter template for Zero to Nix";
+        };
+
+        python-pkg = {
+          path = ./templates/pkg/python;
+          description = "Python package starter template for Zero to Nix";
+        };
+
+        rust-pkg = {
+          path = ./templates/pkg/rust;
+          description = "Rust package starter template for Zero to Nix";
         };
       };
     };

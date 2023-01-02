@@ -4,7 +4,7 @@
   example = pkgs.mkShell {
     buildInputs = with pkgs; [ curl jq git ];
 
-    SECRET_PASSWORD = "open sesame";
+    FUNNY_JOKE = "What kind of phone does a turtle use? A shell phone!";
 
     shellHook = ''
       echo "Welcome to a Nix development environment!"
