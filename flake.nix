@@ -41,6 +41,11 @@
           description = "Rust dev environment template for Zero to Nix";
         };
 
+        cpp-pkg = {
+          path = ./templates/pkg/cpp;
+          description = "C++ package starter template for Zero to Nix";
+        };
+
         go-pkg = {
           path = ./templates/pkg/go;
           description = "Go package starter template for Zero to Nix";
