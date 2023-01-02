@@ -11,6 +11,14 @@
     '';
   };
 
+  cpp = pkgs.mkShell {
+    nativeBuildInputs = with pkgs; [ gcc cmake ];
+
+    shellHook = ''
+      echo "Welcome to a Nix development environment for C++!"
+    '';
+  };
+
   javascript = pkgs.mkShell {
     buildInputs = with pkgs; [ nodejs-18_x ];
 
